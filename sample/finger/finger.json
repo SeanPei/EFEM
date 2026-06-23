@@ -1,0 +1,37 @@
+{
+  "analysis": {
+    "max_optim_iters": 0,
+    "max_line_search": 20
+  },
+  "model": [
+    {
+      "type": "soft",
+      "mesh_file": "c3d10/mesh.txt"
+    }
+  ],
+  "constraint": [
+    {
+      "id": 1,
+      "type": "fix",
+      "constraint_file": "c3d10/fix.txt"
+    },
+    {
+      "id": 2,
+      "type": "pressure",
+      "value": 65000,
+      "constraint_file": "c3d10/pressure.txt"
+    }
+  ],
+  "material": [
+    {
+      "type": "neo_hookean",
+      "density": 1050.0,
+      "C10": 114000,
+      "D1": 1e-6
+    }
+  ],
+  "output": {
+    "integral_log": true,
+    "path": "results"
+  }
+}
